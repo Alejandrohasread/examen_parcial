@@ -5,7 +5,13 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('Esta es mi primera vista')  
 
+#Aqui estan el usuario y la contraseña
+
 def login(request):
-    return render(request,'gestion_tareas/login.html')
+    return render(request,'gestion_tareas/login.html',{
+        'usuario': 'rafloresz@pucpe.edu.pe',
+        'contraseña': 'levi',
+
+    })
 
 
