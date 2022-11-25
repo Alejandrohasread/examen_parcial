@@ -6,26 +6,40 @@
     <body>
         <h2>Lista de tareas</h2>
         <br>
-        {% for tarea in tareas%}
-        <h4>*Título de la tarea</h4>
-        <h4>*Fecha de creación</h4>
-        <h4>*opción de eliminación </h4>
+        {% for tarea in tareas %}
+        <h4>Título de la tarea: {{tarea.0}}</h4>
+        <h4>Fecha de creación: {{tarea.2}}</h4>
+        <h4> opción de eliminación </h4>
         <h4>Visualización</h4>
         <br>
         {% endfor %}
         <br>
         <h4>Ingrese nueva tarea</h4>
-        <form action="">
+        <form method="post" action="{% url 'gestion_tareas:dashboard' %}">
+        {% csrf_token %}   
+            <div>
             <h4>Título: </h4>
-            <input type="text">
+            <input type="text" name="tituloTarea">
+            </div>    
+            <div>
             <h4>Descripción: </h4>
-            <input type="text">
+            <input type="text" name="descripcionTarea">
+            </div>
+            <div>
             <h4>Fecha de creación: </h4>
-            <input type="text">
+            <input type="date" name="creacionTarea">
+            </div>
+            <div>
             <h4>Fecha de entrega: </h4>
-            <input type="text">
+            <input type="date" name="entregaTarea">
+            </div>
+            <div>
             <h4>Usuario designado: </h4>
-            <input type="text">
+            <input type="text" name="designadoTarea">
+            </div>
+            <br>
+            <br>
+            <button type="submit">Registrar nueva tarea</button>
         </form>
         
     </body>
