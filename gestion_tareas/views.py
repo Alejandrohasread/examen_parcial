@@ -13,5 +13,6 @@ def login(request):
         'contraseña': 'levi',
 
     })
-
+def dashboard(request):
+    return render(request,'gestion_tareas/dashboard.html',)
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title> Dashboard </title>
+    </head>
+    <body>
+        <h2>Lista de tareas</h2>
+        <br>
+        {% for tarea in tareas%}
+        <h4>*Título de la tarea</h4>
+        <h4>*Fecha de creación</h4>
+        <h4>*opción de eliminación </h4>
+        <h4>Visualización</h4>
+        <br>
+        {% endfor %}
+        <br>
+        <h4>Ingrese nueva tarea</h4>
+        <form action="">
+            <h4>Título: </h4>
+            <input type="text">
+            <h4>Descripción: </h4>
+            <input type="text">
+            <h4>Fecha de creación: </h4>
+            <input type="text">
+            <h4>Fecha de entrega: </h4>
+            <input type="text">
+            <h4>Usuario designado: </h4>
+            <input type="text">
+        </form>
+        
+    </body>
+
+</html>
