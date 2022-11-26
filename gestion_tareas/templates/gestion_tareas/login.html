@@ -5,9 +5,11 @@
     </head>
     <body>
         <h1>Bienvenido</h1>
-        
-        <h2>Usuario: <input type="email" value="{{usuario}} "> </h2>
-        <h2>Constraseña: <input type="password" value="{{contraseña}}"></h2>
-        <button>Login</button>
+        {% for usuario in usuarios %}
+        <h2>Usuario: <input type="email" value="{{usuario.codigo_usuario}} "> </h2>
+        <h2>Constraseña: <input type="password" value="{{usuario.clave}}"></h2>
+        {% endfor %}
+        <br>
+        <button> <a href="{% url 'gestion_tareas:dashboard' %}"> Login </a></button>
     </body>
 </html>

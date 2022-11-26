@@ -6,9 +6,22 @@
     <body>
         <h2>Lista de tareas</h2>
         <br>
+        <form method="post" url="{% url 'gestion_tareas:dashboard' %}">
+        {% csrf_token %}    
+            <select name="designadoFiltrado" id="">
+                <option value="Rodrigo Alejandro Flores Zúñiga">Rodrigo Alejandro Flores Zúñiga</option>
+                <option value="Alvaro Alonso Flores Zúñiga">Alvaro Alonso Flores Zúñiga</option>
+                <option value="Lorena Isabel Flores Zúñiga">Lorena Isabel Flores Zúñiga</option>
+                <option value="Matias">Matias</option>
+            </select>
+            <button type="submit" name="Filtrar">Filtrar</button>
+        </form>
+        <br>
+        <button><a href="{% url 'gestion_tareas:dashboard' %}">Restablecer</a></button> 
+        <br>
         {% for tarea in tareas %}
-        <h4>Título de la tarea: {{tarea.0}}</h4>
-        <h4>Fecha de creación: {{tarea.2}}</h4>
+        <h4>Título de la tarea: {{tarea.titulo}}</h4>
+        <h4>Fecha de creación: {{tarea.fecha_creacion}}</h4>
         <h4> opción de eliminación </h4>
         <h4>Visualización</h4>
         <br>
@@ -39,7 +52,7 @@
             </div>
             <br>
             <br>
-            <button type="submit">Registrar nueva tarea</button>
+            <button type="submit" name="Crear">Registrar nueva tarea</button>
         </form>
         
     </body>
