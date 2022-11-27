@@ -20,12 +20,23 @@
         <button><a href="{% url 'gestion_tareas:dashboard' %}">Restablecer</a></button> 
         <br>
         {% for tarea in tareas %}
-        <h4>Título de la tarea: {{tarea.titulo}}</h4>
-        <h4>Fecha de creación: {{tarea.fecha_creacion}}</h4>
-        <h4> opción de eliminación </h4>
-        <h4>Visualización</h4>
+        <div>
+            <div>
+            <h4>Título de la tarea: {{tarea.titulo}}</h4>
+        </div>
+        <div>
+            <h4>Fecha de creación: {{tarea.fecha_creacion}}</h4>
+        </div>   
+        <div>
+        <a href="{% url 'gestion_tareas:detalleTarea' tarea.id %}">Detalle</a>   
+        </div>
+
+    </div>
+                
         <br>
-        {% endfor %}
+
+        <br>
+    {% endfor %}
         <br>
         <h4>Ingrese nueva tarea</h4>
         <form method="post" action="{% url 'gestion_tareas:dashboard' %}">

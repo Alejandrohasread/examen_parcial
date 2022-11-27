@@ -1,0 +1,47 @@
+[33mcommit e8559a1b0c66f7013656604b3b74d7ed35f6b43d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Sat Nov 26 13:47:49 2022 -0500
+
+    8vo commit: Se llenaron las bases de datos de las tareas iniciales en la vista dashboard y del usuario de la aplicación, almacenandolos en sqlite3, también se creo la opción de filtrado de tareas por usuario designado en la vista de dashboard
+
+[33mcommit 91c4a823840eda10617cb560755592d7cab84dab[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Sat Nov 26 10:31:34 2022 -0500
+
+    7to commit: Se llenaron las bases de datos sqlite, tanto para las tareas (tareas iniciales) como para el usuario, usando djangoORM
+
+[33mcommit f5e4a3509d13a55aa5cc9ef9d502b43066ea8653[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Fri Nov 25 19:48:25 2022 -0500
+
+    6to commit: Se crearon los modelos en la base de datos sqlite: Clase tarea y Clase usuario
+
+[33mcommit 509ec9b56fddda90e6e2b1106e3f37c917c28b43[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Fri Nov 25 12:57:59 2022 -0500
+
+    5to commit: Se inicio el registro de tareas en el dashborad, pero todavía sin una base de datos
+
+[33mcommit 6a6e401b9fdd3f525e302e9d0052b9d3578aaef9[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Thu Nov 24 20:00:59 2022 -0500
+
+    4to commit: Se inicio la vista del dashbooard
+
+[33mcommit bd1abf7f1466846735df9e769e59f1779b936404[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Wed Nov 23 17:05:33 2022 -0500
+
+    3er commit: Se colocaron el usuario y la contraseña
+
+[33mcommit 9b6e82abb04db47f83be5e73db444911486e23bf[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Wed Nov 23 16:29:14 2022 -0500
+
+    2do commit: Corrección del template Login
+
+[33mcommit e4295b5c55a2a2fc27215b9d12fb71fbaf66b243[m
+Author: Rodrigo Flores <rafloresz@pucp.edu.pe>
+Date:   Wed Nov 23 16:17:43 2022 -0500
+
+    1er commit: Creación de template Login

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vista de detalle de la tarea</title>
+
+    </head>
+    <body>
+        <div>
+            <div>
+               Titulo: {{ tarea_seleccionada.titulo }}
+            </div>
+            <br>
+            <div>
+               Descripción de la tarea: {{ tarea_seleccionada.descripcion }}
+            </div>
+            <br>
+            <div>
+               Fecha de creación: {{ tarea_seleccionada.fecha_creacion }}
+            </div>
+            <br>
+            <div>
+               Fecha de entrega: {{ tarea_seleccionada.fecha_entrega }}
+            </div>
+            <br>
+            <div>
+               Usuario designado para la tarea: {{ tarea_seleccionada.usuario_designado }}
+            </div>
+            <br>
+            <button><a href="{% url 'gestion_tareas:dashboard' %}">Regresar a lista de tareas</a></button> 
+            <br>    
+        </div>
+    </body>
+
+</html>

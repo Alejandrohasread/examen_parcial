@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import usuario, tarea
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 
-def index(request):
-    return HttpResponse('Esta es mi primera vista')  
+ 
 
 #Aqui estan el usuario y la contraseña
 
@@ -43,3 +43,10 @@ def dashboard(request):
         'tareas': tareasInformacion,
         })
 
+def detalleTarea(request,ind):
+        tarea_seleccionada = tarea.objects.get(id=ind)
+        return render(request,'gestion_tareas/detalleTarea.html',{
+            'tarea_seleccionada':tarea_seleccionada,
+        })
+
+  
