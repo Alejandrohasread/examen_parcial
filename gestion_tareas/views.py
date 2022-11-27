@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import usuario, tarea
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-# Create your views here.
 
+# Create your views here.
  
 
 #Aqui estan el usuario y la contraseña
@@ -29,24 +29,24 @@ def dashboard(request):
             print('La fecha de creación de la tarea es: ' + str(fecha_creacion))
             print('La fecha de entrega de la tarea es: ' + str(fecha_entrega))
             print('El usuario designado de la tarea es: ' + str(usuario_designado))    
-            nuevaTarea.append(str(titulo))
-            nuevaTarea.append(str(descripcion))
-            nuevaTarea.append(str(fecha_creacion))
-            nuevaTarea.append(str(fecha_entrega))
-            nuevaTarea.append(str(usuario_designado))
             tarea(titulo = str(titulo),descripcion = str(descripcion),fecha_creacion = str(fecha_creacion),fecha_entrega = str(fecha_entrega),usuario_designado = str(usuario_designado)).save()
             tareasInformacion = tarea.objects.all().order_by('id')    
         elif 'Filtrar' in request.POST:
                 filtradoDesignado = request.POST.get('designadoFiltrado')    
                 tareasInformacion = tarea.objects.filter(usuario_designado=filtradoDesignado)
     return render(request,'gestion_tareas/dashboard.html',{
-        'tareas': tareasInformacion,
+        'tareasInformacion': tareasInformacion,
         })
 
 def detalleTarea(request,ind):
         tarea_seleccionada = tarea.objects.get(id=ind)
         return render(request,'gestion_tareas/detalleTarea.html',{
-            'tarea_seleccionada':tarea_seleccionada,
+            'tarea_seleccionada': tarea_seleccionada
         })
+
+def eliminarTarea(request,ind):
+    tarea_eliminar = tarea.objects.get(id=ind)
+    tarea_eliminar.delete()
+    return HttpResponseRedirect(reverse('gestion_tareas:dashboard'))       
 
   

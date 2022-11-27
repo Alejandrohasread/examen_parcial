@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Vista de detalle de la tarea</title>
-
+        <title> Vista del detalle de la tarea </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div>
-            <div>
-               Titulo: {{ tarea_seleccionada.titulo }}
+         <div class="container">
+            <div class="row text-center">
+               {{ tarea_seleccionada.titulo }}
             </div>
-            <br>
-            <div>
-               Descripción de la tarea: {{ tarea_seleccionada.descripcion }}
+            <div class="row text-center">
+               {{ tarea_seleccionada.descripcion }}
             </div>
-            <br>
-            <div>
-               Fecha de creación: {{ tarea_seleccionada.fecha_creacion }}
+            <div class="row text-center">
+               {{ tarea_seleccionada.fecha_creacion }}
             </div>
-            <br>
-            <div>
-               Fecha de entrega: {{ tarea_seleccionada.fecha_entrega }}
+            <div class="row text-center">
+               {{ tarea_seleccionada.fecha_entrega}}
             </div>
-            <br>
-            <div>
-               Usuario designado para la tarea: {{ tarea_seleccionada.usuario_designado }}
+            <div class="row text-center">
+               {{ tarea_seleccionada.usuario_designado }}
             </div>
-            <br>
-            <button><a href="{% url 'gestion_tareas:dashboard' %}">Regresar a lista de tareas</a></button> 
-            <br>    
-        </div>
+         </div>
+         <br>
+         <button><a href="{% url 'gestion_tareas:dashboard' %}">Volver a la lista completa</a></button> 
+         <br>
+        
     </body>
+
+</html>
 
 </html>
