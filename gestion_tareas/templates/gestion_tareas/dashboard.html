@@ -10,22 +10,26 @@
     <body>
         <div class="container">
             <br>
-            <div class="row alert alert-danger text-center">
+            <div class="row alert alert-primary text-center">
                 <h3>Lista de tareas</h3>
                 
             </div>
-              <form method="post" url="{% url 'gestion_tareas:dashboard' %}">
-                {% csrf_token %}    
-                    <select name="designadoFiltrado" id="">
-                        <option value="Rodrigo Alejandro Flores Zúñiga">Rodrigo Alejandro Flores Zúñiga</option>
-                        <option value="Alvaro Alonso Flores Zúñiga">Alvaro Alonso Flores Zúñiga</option>
-                        <option value="Lorena Isabel Flores Zúñiga">Lorena Isabel Flores Zúñiga</option>
-                        <option value="Matias Flores Vigo">Matias Flores Vigo</option>
-                    </select>
-                    <button type="submit" name="Filtrar">Filtrar</button>
+                <form method="post" url="{% url 'gestion_tareas:dashboard' %}">
+                {% csrf_token %} 
+                    <div class="col3 w-25">   
+                        <select class="form-select" name="designadoFiltrado" id="">
+                            <option value='{{usuario0}}'>{{usuario0}}</option>
+                            <option value='{{usuario1}}'>{{usuario1}}</option>
+                            <option value='{{usuario2}}'>{{usuario2}}</option>
+                            <option value='{{usuario3}}'>{{usuario3}}</option>
+                            <option value='{{usuario4}}'>{{usuario4}}</option>
+                        </select>
+                    </div>  
+                    <br>    
+                <button class="btn btn-info" type="submit" name="Filtrar">Filtrar</button>
                 </form>
                 <br>
-                <button><a href="{% url 'gestion_tareas:dashboard' %}">Mostrar la lista completa (reestablecer)</a></button> 
+                <button class="btn btn-warning"><a href="{% url 'gestion_tareas:dashboard' %}">Mostrar la lista completa (reestablecer)</a></button> 
                 <br>
             <div class="row justify-content-center">
                 <div class="col-6 bg-white"> 
@@ -38,10 +42,10 @@
                             </div>
                         </div>    
                         <div class="row justify-content-center">
-                            <div class="col-4">
-                                <img src="{% static 'img/Lista-de-tareas.jpg' %}">
+                            <div class="col-4  ">
+                                <img src="{% static 'img/Lista-de-tareas.jpg' %}" width="180px">
                             </div>          
-                            <div class="col-6">
+                            <div class="col-8">
                                 <br>
                                 <div class="row">
                                     <h4>Fecha de creación: {{tarea.fecha_creacion}}</h4>
@@ -57,41 +61,74 @@
                                   
                             </div>
                         </div>
-                </div>
+                    </div>
                 <br>
                 {% endfor %}
                 </div>
-            </div>                            
-        </div>
-        
-        <br>
-        <h4>Ingrese nueva tarea</h4>
-        <form method="post" action="{% url 'gestion_tareas:dashboard' %}">
-        {% csrf_token %}   
-            <div>
-            <h4>Título: </h4>
-            <input type="text" name="tituloTarea">
+            </div>  
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-3 w-25">
+                <h2>Ingrese nueva tarea</h2>
+                </div>
+                <br>
+                <br>
+                <br>
+                <form method="post" action="{% url 'gestion_tareas:dashboard' %}">
+                {% csrf_token %}   
+                <div class="row justify-content-center">
+                        <div class="col-3 mx-auto ">
+                            <h4>Título: </h4>
+                        </div>
+                        <div class="col-9">    
+                            <input class="form-control" type="text" name="tituloTarea">
+                        </div>    
+                </div>
+                <div class="row justify-content-center">
+                        <div class="col-3 mx-auto">
+                            <h4>Descripción: </h4>
+                        </div>    
+                        <div class="col-9">    
+                            <input class="form-control" type="text" name="descripcionTarea">
+                        </div>
+                </div>    
+                <div class="row justify-content-center">
+                        <div class="col-3 mx-auto">
+                            <h4>Fecha de creación: </h4>
+                        </div>
+                        <div class="col-9">    
+                            <input class="form-control" type="date" name="creacionTarea">
+                        </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 mx-auto">
+                        <h4>Fecha de entrega: </h4>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" type="date" name="entregaTarea">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 mx-auto">
+                        <h4>Usuario designado: </h4>
+                    </div>    
+                    <div class="col-9">
+                        <input class="form-control" type="text" name="designadoTarea">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-danger" type="submit" name="Crear">Registrar nueva tarea</button>
+                </div>
             </div>    
-            <div>
-            <h4>Descripción: </h4>
-            <input type="text" name="descripcionTarea">
-            </div>
-            <div>
-            <h4>Fecha de creación: </h4>
-            <input type="date" name="creacionTarea">
-            </div>
-            <div>
-            <h4>Fecha de entrega: </h4>
-            <input type="date" name="entregaTarea">
-            </div>
-            <div>
-            <h4>Usuario designado: </h4>
-            <input type="text" name="designadoTarea">
-            </div>
-            <br>
-            <br>
-            <button type="submit" name="Crear">Registrar nueva tarea</button>
-        </form>
+                </form>
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        
         
     </body>
 

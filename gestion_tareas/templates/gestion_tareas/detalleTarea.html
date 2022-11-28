@@ -7,26 +7,66 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     </head>
     <body>
-         <div class="container">
-            <div class="row text-center">
-               {{ tarea_seleccionada.titulo }}
+         <div class="container ">
+            <div class="row text-center justify-content-center">
+               <div class="col-6">
+                 <h2>Titulo: </h2> 
+               </div>
+               <div class="col-6">
+                <h2>{{ tarea_seleccionada.titulo }}</h2>
+               </div>
             </div>
-            <div class="row text-center">
-               {{ tarea_seleccionada.descripcion }}
+            <br>
+            <br>
+            <div class="row text-center justify-content-center">
+               <div class="col-6">
+                  <h2>Descripción: </h2> 
+               </div>
+               <div class="col-6">
+                  <h2>{{ tarea_seleccionada.descripcion }}</h2>
+               </div>      
             </div>
-            <div class="row text-center">
-               {{ tarea_seleccionada.fecha_creacion }}
+            <br>
+            <br>
+            <div class="row text-center justify-content-center">
+               <div class="col-6">
+                  <h2>Fecha de creación: </h2> 
+               </div>
+               <div class="col-6">
+               <h2>{{ tarea_seleccionada.fecha_creacion }}</h2>
+               </div>
+            </div>   
+            <br>
+            <br>
+            <div class="row text-center justify-content-center">
+               <div class="col-6">
+                  <h2>Fecha de entrega: </h2> 
+               </div>
+               <div class="col-6">
+               <h2>{{ tarea_seleccionada.fecha_entrega}}</h2>
+               </div>
             </div>
-            <div class="row text-center">
-               {{ tarea_seleccionada.fecha_entrega}}
+            <br>
+            <br>
+            <div class="row text-center justify-content-center">
+               <div class="col-6">
+                  <h2>Usuario designado para la tarea: </h2> 
+               </div>
+               <div class="col-6">
+                  <h2>{{ tarea_seleccionada.usuario_designado }}</h2> 
+               </div>
+            <br>
+            <br>   
             </div>
-            <div class="row text-center">
-               {{ tarea_seleccionada.usuario_designado }}
-            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              
+               <a class="btn btn-warning" href="{% url 'gestion_tareas:dashboard' %}">Volver a la lista completa</a>
+            
+            </div> 
          </div>
-         <br>
-         <button><a href="{% url 'gestion_tareas:dashboard' %}">Volver a la lista completa</a></button> 
-         <br>
+        
         
     </body>
 

@@ -11,10 +11,17 @@ from django.urls import reverse
 def login(request):
     usuariosInformacion = usuario.objects.all().order_by('id')
     return render(request,'gestion_tareas/login.html',{
-        'usuarios': usuariosInformacion,
+        'usuarios': usuariosInformacion[0] ,
         })
 def dashboard(request):
     tareasInformacion = tarea.objects.all().order_by('id')
+    usuariosInformacion = usuario.objects.all().order_by('id')
+    usuario0= usuariosInformacion[0].nombres + ' ' + usuariosInformacion[0].apellidos
+    usuario1= usuariosInformacion[1].nombres + ' ' + usuariosInformacion[1].apellidos
+    usuario2= usuariosInformacion[2].nombres + ' ' + usuariosInformacion[2].apellidos
+    usuario3= usuariosInformacion[3].nombres + ' ' + usuariosInformacion[3].apellidos
+    usuario4= usuariosInformacion[4].nombres + ' ' + usuariosInformacion[4].apellidos
+
     if request.method == 'POST':
         if 'Crear' in request.POST:
             nuevaTarea = []
@@ -36,6 +43,11 @@ def dashboard(request):
                 tareasInformacion = tarea.objects.filter(usuario_designado=filtradoDesignado)
     return render(request,'gestion_tareas/dashboard.html',{
         'tareasInformacion': tareasInformacion,
+        'usuario0': usuario0,
+        'usuario1': usuario1,
+        'usuario2': usuario2,
+        'usuario3': usuario3,
+        'usuario4': usuario4 ,
         })
 
 def detalleTarea(request,ind):
